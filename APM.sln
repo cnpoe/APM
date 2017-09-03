@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APM.WebAPI", "APM.WebAPI\APM.WebAPI.csproj", "{552F2C86-7C1B-4C9B-A631-174A63460CD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APM.WebAPI.Tests", "APM.WebAPI.Tests\APM.WebAPI.Tests.csproj", "{CBDA9682-A0B1-420B-95B8-A470E764877A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{552F2C86-7C1B-4C9B-A631-174A63460CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{552F2C86-7C1B-4C9B-A631-174A63460CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{552F2C86-7C1B-4C9B-A631-174A63460CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{552F2C86-7C1B-4C9B-A631-174A63460CD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBDA9682-A0B1-420B-95B8-A470E764877A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBDA9682-A0B1-420B-95B8-A470E764877A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBDA9682-A0B1-420B-95B8-A470E764877A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBDA9682-A0B1-420B-95B8-A470E764877A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
