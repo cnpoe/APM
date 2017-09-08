@@ -18,6 +18,14 @@ namespace APM.WebAPI.Controllers
             return productRepository.Retrieve();
         }
 
+        // GET: api/Products
+        public IEnumerable<Models.Product> Get(string search)
+        {
+            var productRepository = new Models.ProductRepository();
+            var products = productRepository.Retrieve();
+            return products.Where(p => p.ProductCode.Contains(search));
+        }
+
         // GET: api/Products/5
         public string Get(int id)
         {
