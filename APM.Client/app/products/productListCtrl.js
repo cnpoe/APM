@@ -9,9 +9,13 @@
         var vm = this;
 
         vm.searchCriteria = "GDN";
-
-        productResource.query({search: vm.searchCriteria}, function (data) {
-            vm.products = data;
-        });
+        //productResource.query( {$skip:1, $top:3} ,function (data) {
+        //    vm.products = data;
+        //});
+        productResource.query(
+            { $filter: "substringof('GDN' , ProductCode)" },
+            function (data) {
+                vm.products = data;
+            });
     }
 }());
