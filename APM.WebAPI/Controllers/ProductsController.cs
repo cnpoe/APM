@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APM.WebAPI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -14,34 +15,48 @@ namespace APM.WebAPI.Controllers
     {
         // GET: api/Products
         [EnableQuery()]
-        public IQueryable<Models.Product> Get()
+        public IQueryable<Product> Get()
         {
-            var productRepository = new Models.ProductRepository();
+            ProductRepository productRepository = new ProductRepository();
             return productRepository.Retrieve().AsQueryable();
         }
-
+        /*
         // GET: api/Products
         public IEnumerable<Models.Product> Get(string search)
         {
             var productRepository = new Models.ProductRepository();
             var products = productRepository.Retrieve();
             return products.Where(p => p.ProductCode.Contains(search));
-        }
+        }*/
 
         // GET: api/Products/5
-        public string Get(int id)
+        public Product Get(int id)
         {
-            return "value";
+            Product product;
+            ProductRepository productRepository = new ProductRepository();
+            if (id > 0)
+            {
+                var products = productRepository.Retrieve();
+                product = products.FirstOrDefault(p => p.ProductId == id);
+            }
+            else {
+                product = productRepository.Create();
+            }
+            return product;
         }
 
         // POST: api/Products
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Product product)
         {
+            ProductRepository productRepository = new ProductRepository();
+            Product newProduct = productRepository.Save(product);
         }
 
         // PUT: api/Products/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]Product product)
         {
+            ProductRepository productRepository = new ProductRepository();
+            Product updatedProduct = productRepository.Save(id, product);
         }
 
         // DELETE: api/Products/5
