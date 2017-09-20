@@ -28,7 +28,7 @@ namespace APM.WebAPI
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { search = RouteParameter.Optional }
+                defaults: new { id = RouteParameter.Optional }
             ); 
 
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
